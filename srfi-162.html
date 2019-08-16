@@ -100,6 +100,7 @@ should be more efficient than default comparators.
 A pre-created default comparator.
 It should behave exactly like a comparator returned by SRFI 128
 <code>make-default-comparator</code>.
+In particular, it provides the same guarantees of ordering and hashing.
 </p>
 
 <p>
@@ -119,7 +120,8 @@ A comparator for booleans such that <code>#f</code> compares before <code>#t</co
 <code>real-comparator</code>
 </p>
 <p>
-A comparator for real numbers such that smaller numbers compare before larger numbers.
+A comparator for real numbers such that smaller numbers compare before larger numbers
+in the sense of the mathematical function &lt;.
 </p>
 
 <p>
@@ -179,6 +181,7 @@ with <code>default-comparator</code> as the element comparator.
 returned by calls to <code>make-eq-comparator</code>,
 <code>make-eqv-comparator</code>,
 and <code>make-equal-comparator</code> respectively.
+They do not necessarily provide ordering functions.
 </p>
 
 <p><code>(eq-comparator)</code></p>
