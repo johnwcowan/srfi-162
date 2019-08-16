@@ -1,7 +1,3 @@
-(use test)
-(use srfi-128)
-(load "../comparators/r7rs-shim.scm")
-
 (define (print x) (display x) (newline))
 
 (test-group "comparators"
@@ -278,6 +274,14 @@
     (test-assert (exact-integer? (hash-salt)))
     (test-assert (< (hash-salt) (hash-bound)))
   ) ; end comparators/bound-salt
+
+  (test-group "comparators/max-min"
+    ;; FIXME: need tests
+  ) ; end comparators/max-min
+
+  (test-group "comparators/prebuilt"
+    ;; FIXME: need tests
+  ) ; end comparators/prebuilt
 
 ) ; end comparators
 

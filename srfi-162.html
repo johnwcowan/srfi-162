@@ -192,16 +192,34 @@ They do not necessarily provide ordering functions.
 
 <h1>Implementation</h1>
 
-<p>The sample implementation is found in a single file in the repository of this
-SRFI named <code>srfi-162-impl.scm</code>.  It should simply be included in
+<p>The sample implementation of SRFI 162 itself is to be found
+in the file <code>srfi/128/162.scm</code> in the repositor of this
+SRFI.  It can be included in
 whichever SRFI 128 library is in use by the implementation.  It is important
 to include it <i>after</i> all other files.  It is also necessary to
 extend the library exports to include the two new procedures and
-ten new comparators.</p>
+13 new comparators.</p>
 
-<p>In addition, a copy of the Chibi version of the SRFI 128 sample
-implementation is also provided, with the implementation file provided
-and the various library files appropriately extended.</p>
+<p>In addition, a unified sample implementation of SRFI 128 plus SRFI 162
+is also provided in the repository.  The following files are present:
+
+<ul>
+<li><code>srfi.128.scm</code> - a Chicken 5 library file</li>
+<li><code>srfi/128.sld</code> - a Chibi library file, easily adapted to any
+R7RS implementation.</li>
+<li><code>srfi/128/128-impl.scm</code> - the record type definition
+and most of the procedures of SRFI 128</li>
+<li><code>srfi/128/128-default.scm</code> - a simple implementation
+of the default constructor, which should be improved by implementers
+to handle records and implementation-specific types</li>
+<li><code>srfi/128/complex-shim.scm</code> - a trivial implementation
+of real-part and imag-part for Schemes that don't have complex numbers</li>
+<li><code>srfi/128/chicken-shim.scm</code> - supplementary procedures for
+Chicken to make it sufficiently R7RS-compatible</li>
+<li><code>srfi/128/162.scm</code> - SRFI 162 procedures and comparators
+as explained above.</li>
+</ul>
+
 
 <h1>Copyright</h1>
 Copyright (C) John Cowan (2018). All Rights Reserved. 
